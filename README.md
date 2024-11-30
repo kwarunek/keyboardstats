@@ -15,7 +15,7 @@ Because it uses sqlite as a backend (`/opt/keyboardstats/keyboardstats.db`), you
 
 For example:
 ```bash
-sqlite3 /opt/keyboardstats/keyboardstats.db 'select key, count(*) as cnt from keyboardstats group by key order by cnt DESC;'
+sqlite3 /opt/keyboardstats/keyboardstats.db 'select key, sum(count) as cnt from keyboardstats group by key order by cnt DESC;'
 ```
 
 ## Security
